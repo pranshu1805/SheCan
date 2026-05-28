@@ -112,8 +112,6 @@ nav{
 
     position:relative;
     overflow:hidden;
-
-    background:#050505;
 }
 
 #hero img{
@@ -447,26 +445,22 @@ footer p{
         height:75px;
     }
 
-    #leftnav{
-        gap:8px;
-    }
-
     #leftnav img{
-        width:42px;
-        height:42px;
+        width:45px;
+        height:45px;
     }
 
     #leftnav h2{
-        font-size:15px;
+        font-size:18px;
     }
 
     #rightnav{
         display:flex;
-        gap:10px;
+        gap:12px;
     }
 
     #rightnav a{
-        font-size:11px;
+        font-size:13px;
     }
 
     #overlay{
@@ -523,40 +517,17 @@ footer p{
 
 @media(max-width:600px){
 
-    nav{
-        padding:0 10px;
-        height:65px;
-    }
-
-    #leftnav img{
-        width:35px;
-        height:35px;
-    }
-
-    #leftnav h2{
-        font-size:12px;
-    }
-
-    #rightnav{
-        gap:6px;
-    }
-
-    #rightnav a{
-        font-size:9px;
-    }
-
-    #hero img{
-        display:none !important;
-    }
-
     #hero{
         background:#050505;
     }
 
-    #overlay{
-        background:#050505 !important;
+    #hero img{
+        display:none;
+    }
 
+    #overlay{
         padding:25px;
+        background:#050505;
     }
 
     #overlay h1{
@@ -569,8 +540,6 @@ footer p{
 
         font-size:16px;
         line-height:28px;
-
-        width:100%;
     }
 
     #overlay button{
