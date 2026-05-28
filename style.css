@@ -16,6 +16,11 @@ html,body{
     scroll-behavior:smooth;
 }
 
+a{
+    text-decoration:none;
+    color:white;
+}
+
 #main{
     width:100%;
     min-height:100%;
@@ -38,7 +43,9 @@ nav{
     padding:0 80px;
 
     backdrop-filter:blur(18px);
+
     background:rgba(0,0,0,0.18);
+
     border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
@@ -51,8 +58,10 @@ nav{
 #leftnav img{
     width:58px;
     height:58px;
+
     border-radius:50%;
     object-fit:cover;
+
     border:2px solid #ff5c93;
 }
 
@@ -68,21 +77,29 @@ nav{
 }
 
 #rightnav a{
-    color:white;
-    text-decoration:none;
     font-size:17px;
     position:relative;
+    transition:0.3s;
 }
 
 #rightnav a::after{
     content:"";
+
     position:absolute;
+
     left:0;
     bottom:-6px;
+
     width:0%;
     height:2px;
+
     background:#ff5c93;
+
     transition:0.4s;
+}
+
+#rightnav a:hover{
+    color:#ff5c93;
 }
 
 #rightnav a:hover::after{
@@ -92,6 +109,7 @@ nav{
 #hero{
     width:100%;
     height:100vh;
+
     position:relative;
     overflow:hidden;
 }
@@ -99,31 +117,42 @@ nav{
 #hero img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     position:absolute;
     top:0;
     left:0;
-    z-index:1;
+
     filter:brightness(45%);
 }
 
 #overlay{
     width:100%;
     height:100%;
+
     position:absolute;
     top:0;
     left:0;
-    z-index:2;
 
-    background:linear-gradient(to right,
-    rgba(5, 5, 5, 0.9) 25%,
-    rgba(5, 5, 5, 0.4) 65%,
-    rgba(5, 5, 5, 0.1) 100%);
+    z-index:2;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
+
     padding-left:90px;
+
+    background:linear-gradient(to right,
+    rgba(5,5,5,0.9) 25%,
+    rgba(5,5,5,0.45) 65%,
+    rgba(5,5,5,0.08) 100%);
+}
+
+#overlay h4{
+    color:#ff5c93;
+    letter-spacing:4px;
+    margin-bottom:20px;
 }
 
 #overlay h1{
@@ -131,32 +160,47 @@ nav{
     line-height:115px;
     font-weight:800;
 
-    background:linear-gradient(to right, #ffffff, #ff9fbe);
+    background:linear-gradient(to right,
+    #ffffff,
+    #ff9fbe);
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 #overlay p{
     margin-top:25px;
+
     width:650px;
+
     font-size:20px;
     line-height:35px;
+
     color:#d4d4d4;
 }
 
 #overlay button{
     margin-top:35px;
+
     width:220px;
     height:60px;
+
     border:none;
     border-radius:50px;
 
-    background:linear-gradient(to right, #ff4f81, #ff78aa);
+    background:linear-gradient(to right,
+    #ff4f81,
+    #ff78aa);
+
     color:white;
+
     font-size:18px;
     font-weight:500;
+
     cursor:pointer;
+
     transition:0.4s;
+
     box-shadow:0 10px 30px rgba(255,92,147,0.25);
 }
 
@@ -164,98 +208,147 @@ nav{
     transform:translateY(-6px) scale(1.03);
 }
 
-#about{
+#story{
     width:100%;
-    min-height:60vh;
+    min-height:80vh;
+
     display:flex;
     justify-content:space-between;
-    align-items:flex-start;
+
     padding:130px 90px;
+
     gap:60px;
 }
 
-#aboutleft{
+.storyleft{
     width:50%;
 }
 
-#aboutleft h4{
+.storyleft h4{
     color:#ff5c93;
     letter-spacing:4px;
-    font-size:18px;
 }
 
-#aboutleft h1{
+.storyleft h1{
     margin-top:20px;
+
     font-size:75px;
     line-height:85px;
 }
 
-#aboutright{
+.storyright{
     width:40%;
 }
 
-#aboutright p{
+.storyright p{
     font-size:20px;
-    line-height:38px;
-    color:#cfcfcf;
+    line-height:40px;
+
+    color:#d0d0d0;
 }
 
-#cards{
+#impact{
     width:100%;
-    min-height:60vh;
+    min-height:100vh;
 
     display:flex;
     align-items:center;
     justify-content:center;
-    
+
     gap:30px;
+
     padding:80px 40px;
+
     flex-wrap:wrap;
 }
 
-.card{
-    width: calc(33.333% - 20px);
+.impactcard{
+    width:calc(33.333% - 20px);
+
     min-width:300px;
     min-height:360px;
-    padding: 40px 30px;
+
+    padding:40px 30px;
 
     background:#0d0d0d;
+
     border:1px solid rgba(255,255,255,0.08);
+
     border-radius:24px;
 
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     text-align:center;
+
+    transition:0.4s;
 }
 
-.card i{
-    font-size:50px;
+.impactcard:hover{
+    transform:translateY(-12px);
+
+    border:1px solid rgba(255,92,147,0.35);
+
+    box-shadow:
+    0 0 40px rgba(255,92,147,0.12);
+}
+
+.impactcard i{
+    font-size:55px;
+
     color:#ff5c93;
+
     margin-bottom:20px;
 }
 
-.card h2{
-    font-size:28px;
-    font-weight:700;
-    color:white;
+.impactcard h2{
+    font-size:32px;
     margin-bottom:15px;
 }
 
-.card p{
+.impactcard p{
     font-size:16px;
-    line-height:26px;
+    line-height:28px;
     color:#cfcfcf;
+}
+
+#quote{
+    width:100%;
+    min-height:60vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:80px;
+}
+
+#quote h1{
+    font-size:80px;
+    line-height:95px;
+
+    background:linear-gradient(to right,
+    #ff4f81,
+    #c084fc);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 #stats{
     width:100%;
     min-height:40vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     gap:120px;
+
     padding:40px;
 }
 
@@ -266,13 +359,18 @@ nav{
 .stat h1{
     font-size:85px;
     font-weight:800;
-    background:linear-gradient(to right, #ff4f81, #c084fc);
+
+    background:linear-gradient(to right,
+    #ff4f81,
+    #c084fc);
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .stat p{
     margin-top:10px;
+
     font-size:22px;
     color:#d4d4d4;
 }
@@ -280,12 +378,16 @@ nav{
 footer{
     width:100%;
     min-height:45vh;
+
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     gap:25px;
+
     border-top:1px solid rgba(255,255,255,0.06);
+
     background:#040404;
 }
 
@@ -295,9 +397,12 @@ footer h2{
 
 footer p{
     width:520px;
+
     text-align:center;
+
     font-size:18px;
     line-height:32px;
+
     color:#cfcfcf;
 }
 
@@ -308,34 +413,54 @@ footer p{
 
 #socials i{
     font-size:30px;
+
     cursor:pointer;
+
     transition:0.4s;
 }
 
 #socials i:hover{
     color:#ff5c93;
+
     transform:translateY(-5px);
 }
 
 @media(max-width:1200px){
+
     #overlay h1{
         font-size:85px;
         line-height:95px;
     }
 
-    .card{
-        width: calc(50% - 15px);
+    .impactcard{
+        width:calc(50% - 15px);
     }
+
 }
 
 @media(max-width:900px){
 
     nav{
-        padding:0 30px;
+        padding:0 20px;
+        height:75px;
+    }
+
+    #leftnav img{
+        width:45px;
+        height:45px;
+    }
+
+    #leftnav h2{
+        font-size:18px;
     }
 
     #rightnav{
-        display:none;
+        display:flex;
+        gap:12px;
+    }
+
+    #rightnav a{
+        font-size:13px;
     }
 
     #overlay{
@@ -352,30 +477,30 @@ footer p{
         font-size:18px;
     }
 
-    #about{
+    #story{
         flex-direction:column;
+
         padding:80px 40px;
     }
 
-    #aboutleft{
+    .storyleft{
         width:100%;
     }
 
-    #aboutleft h1{
+    .storyleft h1{
         font-size:55px;
         line-height:65px;
     }
 
-    #aboutright{
+    .storyright{
         width:100%;
     }
 
-    #cards{
-        flex-direction:column;
+    #impact{
         padding:40px 20px;
     }
 
-    .card{
+    .impactcard{
         width:100%;
     }
 
@@ -387,6 +512,7 @@ footer p{
     footer p{
         width:90%;
     }
+
 }
 
 @media(max-width:600px){
@@ -402,6 +528,7 @@ footer p{
 
     #overlay p{
         margin-top:18px;
+
         font-size:16px;
         line-height:28px;
     }
@@ -409,35 +536,41 @@ footer p{
     #overlay button{
         width:180px;
         height:52px;
+
         font-size:16px;
     }
 
-    #about{
+    #story{
         padding:60px 25px;
     }
 
-    #aboutleft h1{
+    .storyleft h1{
         font-size:40px;
         line-height:50px;
     }
 
-    #aboutright p{
+    .storyright p{
         font-size:17px;
         line-height:30px;
     }
 
-    .card{
+    .impactcard{
         min-width:100%;
         min-height:320px;
     }
 
-    .card h2{
+    .impactcard h2{
         font-size:24px;
     }
 
-    .card p{
+    .impactcard p{
         font-size:15px;
         line-height:24px;
+    }
+
+    #quote h1{
+        font-size:42px;
+        line-height:55px;
     }
 
     .stat h1{
@@ -451,9 +584,5 @@ footer p{
     footer h2{
         font-size:35px;
     }
-}
 
-a{
-    text-decoration:none;
-    color:white;
 }
